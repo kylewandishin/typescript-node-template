@@ -1,0 +1,37 @@
+{
+  "name": "accounting-automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scripts/main.ts",
+  "type":"module",
+  "scripts": {
+    "main": "tsx scripts/main.tsx",
+    "prepare": "husky",
+    "precommit": "concurrently -g -n \"eslint,test:unit,build\" -c \"#341BAB,#A6CC66,#3077C6\" \"bun run lint\" \"bun run test:unit\" \"bun run build\"",
+    "pretty": "prettier --config .prettierrc --write .",
+    "lint": "eslint . --fix --cache",
+    "test:unit": "bun test unit",
+    "test:integration": "bun test integration",
+    "build": "bun run tsc"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.1",
+    "@types/bun": "latest",
+    "@types/node": "^22.5.0",
+    "concurrently": "^8.2.2",
+    "eslint": "^9.9.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-tsdoc": "^0.3.0",
+    "globals": "^15.9.0",
+    "husky": "^9.1.5",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "typescript-eslint": "^8.2.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+  }
+}
